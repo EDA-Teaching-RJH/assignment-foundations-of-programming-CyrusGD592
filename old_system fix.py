@@ -29,7 +29,7 @@ def run_system_monolith():
         if opt == "1":  #syntax error need == if equals to
             print("Current Crew List:")
             
-            for i in range(5): #  range was too high needed to be limited to list entries
+            for i in range(4): #  range was too high needed to be limited to list entries
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
@@ -39,8 +39,8 @@ def run_system_monolith():
             
            
             n.append(new_name) 
-            r.append(new_rank) # added appends to nwe rank adn div to add t list
-            d.append(new_div)
+            r.append(new_rank) # added appends to new rank adn div to add t list
+            d.append(new_div) # new crew is not called back when crew is viewed
             print("Crew member added.")
             
         elif opt == "3":
@@ -57,9 +57,9 @@ def run_system_monolith():
             count = 0
             
             for rank in r:
-                if rank == "Captain" or "Commander": 
+                if rank == "Captain" or  rank == "Commander": # displays as all ranks being high ranking officers due to logic error 
                     count = count + 1
-            print("High ranking officers: " + count) 
+            print("High ranking officers: " + str(count)) # count is a interger and needs to be converted to a string to print
             
         elif opt == "5":
             print("Shutting down.")
