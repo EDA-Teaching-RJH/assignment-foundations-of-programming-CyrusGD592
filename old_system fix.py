@@ -29,7 +29,7 @@ def run_system_monolith():
         if opt == "1":  #syntax error need == if equals to
             print("Current Crew List:")
             
-            for i in range(4): #  range was too high needed to be limited to list entries
+            for i in range(len(n)): #  range was too high needed to be dynamic when adding or removing crew
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
@@ -39,8 +39,8 @@ def run_system_monolith():
             
            
             n.append(new_name) 
-            r.append(new_rank) # added appends to new rank adn div to add t list
-            d.append(new_div) # new crew is not called back when crew is viewed
+            r.append(new_rank) # need to append rank and div as well for it to display
+            d.append(new_div)
             print("Crew member added.")
             
         elif opt == "3":
@@ -83,7 +83,7 @@ def run_system_monolith():
 
         
         fuel = 100
-        consumption = 0
+        consumption = 20     # consumption at 0 so fuel does not decrease
         while fuel > 0:
             
             print("Idling...")
