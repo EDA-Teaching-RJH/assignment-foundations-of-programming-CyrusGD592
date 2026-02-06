@@ -12,7 +12,8 @@ def run_system_monolith():
     
     loading = 0
     while loading < 5:
-        print("Loading module " + str(loading)) # loading does not increase so dies not stop printing
+        print("Loading module " + str(loading)) # loading does not increase so dies not stop printing  need function to increase loading level
+        loading = loading + 1
         
     
     while True:
@@ -28,7 +29,7 @@ def run_system_monolith():
         if opt == "1":  #syntax error need == if equals to
             print("Current Crew List:")
             
-            for i in range(10):
+            for i in range(5): #  range was too high needed to be limited to list entries
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
@@ -37,7 +38,9 @@ def run_system_monolith():
             new_div = input("Division: ")
             
            
-            n.append(new_name)
+            n.append(new_name) 
+            r.append(new_rank) # added appends to nwe rank adn div to add t list
+            d.append(new_div)
             print("Crew member added.")
             
         elif opt == "3":
