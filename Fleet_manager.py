@@ -85,7 +85,37 @@ def update_rank():
        rak = input("Updated Rank: ")
        r[pp] = rak # raplaces rank(r) of column(pp) with rank(rak)
        print("New Rank: " + rak)  
-       display_menu() 
+       display_menu()  
+
+
+def search_crew(): 
+     sr =  input("Enter search term: ")
+     
+     if sr == "Name": 
+            for i in range(len(n)): # asks for term then searches and prints all results for that term 
+             print(n[i])
+     elif sr == "Rank":
+            for i in range(len(n)):
+             print(r[i]) 
+     elif sr == "Division": 
+            for i in range(len(n)): 
+             print(d[i]) 
+     elif sr == "Id": 
+            for i in range(len(n)): 
+             print(f[i]) 
+     else:
+            print("Invalid Term") 
+            search_crew()  
+     display_menu() 
+
+     
+
+
+ 
+ 
+
+
+
 
         
 
