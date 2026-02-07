@@ -45,11 +45,13 @@ def add_member():
        else:
         dv = input("Enter Division: ") 
         id = input("Enter Valid Id: ")  
+
        if id not in f: 
               f.append(id) 
               n.append(nm) 
               d.append(dv) 
-              r.append(rk) 
+              r.append(rk)  
+              display_menu() 
        else: 
               print("Invalid Id")  
               add_member()
