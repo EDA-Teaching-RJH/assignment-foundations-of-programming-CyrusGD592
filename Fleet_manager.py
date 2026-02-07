@@ -15,7 +15,10 @@ def display_menu():
                 display_roster()  # initialises menu
 
         if opt == "2": 
-                add_member()
+                add_member() 
+
+        if opt == "3": 
+               remove_member()
 
 
 def display_roster(): 
@@ -56,6 +59,8 @@ def add_member():
               print("Invalid Id")  
               add_member()
               
+
+def remove_member(): 
        
         
 
