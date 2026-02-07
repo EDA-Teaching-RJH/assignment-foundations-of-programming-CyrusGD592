@@ -8,7 +8,8 @@ def display_menu():
         print("MENU: ") 
         print("User: " + name) # prints out users name
         print("1: Display Roster -")  
-        print("2: Add Crew -")
+        print("2: Add Crew -") 
+        print("3: Remove Crew -")
 
         opt = input("Select Option: ") 
         if opt == "1": 
@@ -61,7 +62,16 @@ def add_member():
               
 
 def remove_member(): 
-       
+       x = input("Id of crew to remove: ") 
+       im = f.index(x) 
+       n.pop(im) 
+       r.pop(im)
+       d.pop(im)
+       f.pop(im) 
+       print("Removed: " + x) 
+       display_menu()
+
+
         
 
 
