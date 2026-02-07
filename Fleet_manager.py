@@ -9,7 +9,8 @@ def display_menu():
         print("User: " + name) # prints out users name
         print("1: Display Roster -")  
         print("2: Add Crew -") 
-        print("3: Remove Crew -")
+        print("3: Remove Crew -") 
+        print("4: Update Rank -")
 
         opt = input("Select Option: ") 
         if opt == "1": 
@@ -19,7 +20,14 @@ def display_menu():
                 add_member() 
 
         if opt == "3": 
-               remove_member()
+               remove_member() 
+
+        if opt == "4": 
+               update_rank() 
+        
+        if opt == "5": 
+               search_crew()
+               
 
 
 def display_roster(): 
@@ -62,7 +70,7 @@ def add_member():
               
 
 def remove_member(): 
-       x = input("Id of crew to remove: ") 
+       x = input("Id of crew to remove: ") # gets id of crew then uses index to see which column it is in then removes all valuex in that column
        im = f.index(x) 
        n.pop(im) 
        r.pop(im)
@@ -71,6 +79,13 @@ def remove_member():
        print("Removed: " + x) 
        display_menu()
 
+def update_rank(): 
+       up = input("Id of Crew Member: ") # asks for id then uses index to get number in list in order to replace that value
+       pp = f.index(up)  
+       rak = input("Updated Rank: ")
+       r[pp] = rak # raplaces rank(r) of column(pp) with rank(rak)
+       print("New Rank: " + rak)  
+       display_menu() 
 
         
 
