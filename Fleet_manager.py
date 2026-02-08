@@ -137,7 +137,15 @@ def calculate_payroll():
       display_menu() 
                   
 
-
+def count_officers(): 
+      total = 0  
+      for i in r: 
+            if i == "Captain": 
+                  total += 1 
+            if i == "Commander": 
+                  total += 1 
+      print(f"Officer Count: {total}") 
+      display_menu() 
  
  
 
