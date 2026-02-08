@@ -12,7 +12,9 @@ def display_menu():
         print("3: Remove Crew -") 
         print("4: Update Rank -") 
         print("5: Search Crew -") 
-        print("6: Search Divisions -")
+        print("6: Search Divisions -") 
+        print("7: Current Payroll-") 
+        print("8: Officer Count -")
 
         opt = input("Select Option: ") 
         if opt == "1": 
@@ -30,7 +32,11 @@ def display_menu():
         if opt == "5": 
                search_crew()  
         if opt == "6": 
-              filter_by_division()
+              filter_by_division() 
+        if opt == "7": 
+              calculate_payroll() 
+        if opt == "8": 
+              count_officers()
                
 def display_roster(): 
         print("Current Crew Roster -") 
@@ -122,8 +128,13 @@ def filter_by_division():
                   filter_by_division() 
       display_menu() 
 
-       
-        
+def calculate_payroll(): 
+      total = 0 
+      cost = {"Captain" : 1000, "Commander" : 750, "Lt. Commander" : 600, "Lieutenant" : 500} # creates dictionary of ranks with added values
+      for i in r: # for every rank in r
+            total += cost.get(i, 0) # adds the cost of each rank to the total
+      print(f"Payroll Total:  {total}") # prints out the payroll total
+      display_menu() 
                   
 
 
