@@ -10,7 +10,9 @@ def display_menu():
         print("1: Display Roster -")  
         print("2: Add Crew -") 
         print("3: Remove Crew -") 
-        print("4: Update Rank -")
+        print("4: Update Rank -") 
+        print("5: Search Crew -") 
+        print("6: Search Divisions -")
 
         opt = input("Select Option: ") 
         if opt == "1": 
@@ -26,10 +28,10 @@ def display_menu():
                update_rank() 
         
         if opt == "5": 
-               search_crew()
+               search_crew()  
+        if opt == "6": 
+              filter_by_division()
                
-
-
 def display_roster(): 
         print("Current Crew Roster -") 
         print("Name:   Rank:   Divison:  Id:")
@@ -108,7 +110,33 @@ def search_crew():
             search_crew()  
      display_menu() 
 
-     
+def filter_by_division():  
+      xy = input("Enter Division: ")
+      match xy: 
+        case "Operations": 
+                  for i in range(len(d)): #searches integers in division and if the integer matches the division input it prints out all results in that line
+                    if d[i] == xy:
+                     print(n[i] + ": " + r[i] + " - " + d[i] + "  #" + f[i])
+        case "Command": 
+                  for i in range(len(d)): 
+                    if d[i] == xy:
+                     print(n[i] + ": " + r[i] + " - " + d[i] + "  #" + f[i]) 
+        case "Security":
+                  for i in range(len(d)): 
+                    if d[i] == xy:
+                     print(n[i] + ": " + r[i] + " - " + d[i] + "  #" + f[i]) 
+        case "Engineering":  
+                  for i in range(len(d)): 
+                    if d[i] == xy:
+                     print(n[i] + ": " + r[i] + " - " + d[i] + "  #" + f[i]) 
+        case _: 
+                  print("Invalid") # if the division does not match prints invalid then resets
+                  filter_by_division() 
+      display_menu() 
+
+       
+        
+                  
 
 
  
@@ -118,9 +146,6 @@ def search_crew():
 
 
         
-
-
-
 
 
 def main():  
