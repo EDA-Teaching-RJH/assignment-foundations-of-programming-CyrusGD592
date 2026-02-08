@@ -113,22 +113,10 @@ def search_crew():
 def filter_by_division():  
       xy = input("Enter Division: ")
       match xy: 
-        case "Operations": 
+        case "Operations"|"Command"|"Security"|"Engineering": 
                   for i in range(len(d)): #searches integers in division and if the integer matches the division input it prints out all results in that line
                     if d[i] == xy:
                      print(n[i] + ": " + r[i] + " - " + d[i] + "  #" + f[i])
-        case "Command": 
-                  for i in range(len(d)): 
-                    if d[i] == xy:
-                     print(n[i] + ": " + r[i] + " - " + d[i] + "  #" + f[i]) 
-        case "Security":
-                  for i in range(len(d)): 
-                    if d[i] == xy:
-                     print(n[i] + ": " + r[i] + " - " + d[i] + "  #" + f[i]) 
-        case "Engineering":  
-                  for i in range(len(d)): 
-                    if d[i] == xy:
-                     print(n[i] + ": " + r[i] + " - " + d[i] + "  #" + f[i]) 
         case _: 
                   print("Invalid") # if the division does not match prints invalid then resets
                   filter_by_division() 
